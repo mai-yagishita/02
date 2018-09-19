@@ -40,7 +40,7 @@ function keydown(event) {
 			cnt = 6;
 		}
 
-		//画像を切り替え
+		//画像切り替え
 		document.getElementById("mario_image").src=img[cnt].src;
 	}
 
@@ -56,14 +56,14 @@ function keydown(event) {
 			cnt = 3;
 		}
 
-		//画像を切り替え
+		//画像切り替え
 		document.getElementById("mario_image").src=img[cnt].src;
 	}
 
 	disp();
 }
 
-// 表示座標
+// 表示座標変更
 function disp() {
 	if(left == 1 && x > 0) {
 		x = x - pv;
