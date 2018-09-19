@@ -28,64 +28,75 @@ img[6].src = "mario_6.png";
 
 // キーが押されている時
 function keydown(event) {
-	// 左キー
-	if(event.keyCode == 37) {
-		left = 1;
+	try {
+		// 左キー
+		if(event.keyCode == 37) {
+			left = 1;
 
-		if (cnt == 1 || cnt == 2 || cnt == 3 || cnt == 6) {
-			cnt = 4;
-		} else if (cnt == 4) {
-			cnt = 5;
-		} else if (cnt == 5) {
-			cnt = 6;
+			if (cnt == 1 || cnt == 2 || cnt == 3 || cnt == 6) {
+				cnt = 4;
+			} else if (cnt == 4) {
+				cnt = 5;
+			} else if (cnt == 5) {
+				cnt = 6;
+			}
+
+			//画像を切り替え
+			document.getElementById("mario_image").src=img[cnt].src;
 		}
 
-		//画像切り替え
-		document.getElementById("mario_image").src=img[cnt].src;
-	}
+		// 右キー
+		if(event.keyCode == 39) {
+			right = 1;
 
-	// 右キー
-	if(event.keyCode == 39) {
-		right = 1;
+			if (cnt == 3 || cnt == 4 || cnt == 5 || cnt == 6) {
+				cnt = 1;
+			} else if (cnt == 1) {
+				cnt = 2;
+			} else if (cnt == 2) {
+				cnt = 3;
+			}
 
-		if (cnt == 3 || cnt == 4 || cnt == 5 || cnt == 6) {
-			cnt = 1;
-		} else if (cnt == 1) {
-			cnt = 2;
-		} else if (cnt == 2) {
-			cnt = 3;
+			//画像を切り替え
+			document.getElementById("mario_image").src=img[cnt].src;
 		}
-
-		//画像切り替え
-		document.getElementById("mario_image").src=img[cnt].src;
+		disp();
+	} catch (e){
+		console.log(e.message);
 	}
-
-	disp();
 }
 
-// 表示座標変更
+// 表示座標
 function disp() {
-	if(left == 1 && x > 0) {
-		x = x - pv;
-	}
+	try{
+		if(left == 1 && x > 0) {
+			x = x - pv;
+		}
 
-	if(right == 1 && x < 700) {
-		x = x + pv;
-	}
+		if(right == 1 && x < 700) {
+			x = x + pv;
+		}
 
-	document.getElementById("mario").style.left = x;
+		document.getElementById("mario").style.left = x;
+	} catch (e){
+		console.log(e.message);
+	}
 }
 
 // キーが押されていない時
 function keyup(event) {
-	// 左キー
-	if(event.keyCode == 37) {
-		left = 0;
-	}
+	try {
+		// 左キー
+		if(event.keyCode == 37) {
+			left = 0;
+		}
 
-	// 右キー
-	if(event.keyCode == 39) {
-		right = 0;
+		// 右キー
+		if(event.keyCode == 39) {
+			right = 0;
+		}
+	}  catch (e){
+		console.log(e.message);
 	}
 }
 
