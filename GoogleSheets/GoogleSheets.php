@@ -2,7 +2,7 @@
 const SHEET_ID = "11BCnspCt2Mut3nhc4WMY6CYTd0zF9C3eCzsk1AEpKLM";
 const SHEET_NAME = "sales";
 const RANGES = "!A1:E6";
-const API_KEY = "AIzaSyDwxpicDSa3GBcLJmgE1yxdtjYpIJFogcA";
+const API_KEY = "";
 
 // スプレッドシートのデータを取得するためのURL
 $url =
